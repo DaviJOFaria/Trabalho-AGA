@@ -12,9 +12,6 @@ def laplace(matriz, xLinha, xColuna):
             if newLinha:
                 newMatriz.append(newLinha)
     return newMatriz
-                    
-            
-
 
 def calculoDet(matriz):
     ordem = len(matriz)
@@ -42,8 +39,6 @@ def calculoDet(matriz):
     
     return det
         
-
-
 print("=== Calculo de determinantes de matriz ===")
 
 linhas = int(input("Digite a quantidade de linhas da matriz: "))
@@ -67,4 +62,10 @@ for matrizLinha in matriz:
     print(matrizLinha)
 
 detMatriz = calculoDet(matriz)
-print(detMatriz)
+print(f"Determinante = {detMatriz}")
+
+if(detMatriz == 0):
+    print("Matriz singular. Não possui inversa")
+
+elif(detMatriz != 0):
+    print("Matriz não singular. Invertível")
