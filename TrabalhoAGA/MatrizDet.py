@@ -1,5 +1,3 @@
-import sys
-
 def laplace(matriz, xLinha, xColuna):
     newMatriz = []
 
@@ -41,17 +39,12 @@ def calculoDet(matriz):
         
 print("=== Calculo de determinantes de matriz ===")
 
-linhas = int(input("Digite a quantidade de linhas da matriz: "))
-colunas = int(input("Digite a quantidade de colunas da matriz: "))
-
-if(linhas != colunas):
-    print("Matriz nao é quadrada, determinante invalida")
-    sys.exit()
+ordem = int(input("Digite a ordem da matriz: "))
 
 matriz = []
 print("Digite o conteudo da matriz separado por espaços:")
 
-for i in range(linhas):
+for i in range(ordem):
     userLinha = input()
     # Divide a string e converte os elementos para inteiros
     matrizLinha = list(map(int, userLinha.split()))
@@ -64,8 +57,8 @@ for matrizLinha in matriz:
 detMatriz = calculoDet(matriz)
 print(f"Determinante = {detMatriz}")
 
-if(detMatriz == 0):
+if( detMatriz == 0 ):
     print("Matriz singular. Não possui inversa")
 
-elif(detMatriz != 0):
+else:
     print("Matriz não singular. Invertível")
