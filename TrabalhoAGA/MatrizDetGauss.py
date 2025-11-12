@@ -43,6 +43,6 @@ print(f"--- Cálculo do Determinante por Eliminação Gaussiana ---")
 print(f"Matriz de Entrada (5x5):\n{matriz_grande}")
 print(f"\nDeterminante Calculado: {det_calculado:.2f}")
 
-# Para referência e comparação (usando a função nativa do NumPy)
+#Numpy
 det_numpy = np.linalg.det(matriz_grande)
 print(f"Verificação (NumPy): {det_numpy:.2f}")

@@ -39,7 +39,7 @@ def calculoDet(matriz):
         
 print("=== Calculo de determinantes de matriz ===")
 
-ordem = int(input("Digite a ordem da matriz: "))
+'''ordem = int(input("Digite a ordem da matriz: "))
 
 matriz = []
 print("Digite o conteudo da matriz separado por espaços:")
@@ -48,7 +48,15 @@ for i in range(ordem):
     userLinha = input()
     # Divide a string e converte os elementos para inteiros
     matrizLinha = list(map(int, userLinha.split()))
-    matriz.append(matrizLinha)
+    matriz.append(matrizLinha) '''
+
+matriz =([
+    [1, 5, 2, 8, 4],
+    [3, 0, 7, 1, 9],
+    [6, 4, 1, 2, 5],
+    [9, 2, 3, 7, 0],
+    [0, 1, 8, 6, 3]
+])
 
 print("\nMatriz: ")
 for matrizLinha in matriz:
@@ -56,9 +64,3 @@ for matrizLinha in matriz:
 
 detMatriz = calculoDet(matriz)
 print(f"Determinante = {detMatriz}")
-
-if( detMatriz == 0 ):
-    print("Matriz singular. Não possui inversa")
-
-else:
-    print("Matriz não singular. Invertível")
