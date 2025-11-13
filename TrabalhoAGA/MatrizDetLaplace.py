@@ -1,3 +1,5 @@
+import time
+
 def laplace(matriz, xLinha, xColuna):
     newMatriz = []
 
@@ -37,7 +39,7 @@ def calculoDet(matriz):
     
     return det
         
-print("=== Calculo de determinantes de matriz ===")
+print("=== Cálculo do Determinante por Teorema de Laplace ===")
 
 '''ordem = int(input("Digite a ordem da matriz: "))
 
@@ -51,16 +53,27 @@ for i in range(ordem):
     matriz.append(matrizLinha) '''
 
 matriz =([
-    [1, 5, 2, 8, 4],
-    [3, 0, 7, 1, 9],
-    [6, 4, 1, 2, 5],
-    [9, 2, 3, 7, 0],
-    [0, 1, 8, 6, 3]
+[1, 4, 7, 2, 9, 5, 3, 8, 6, 10],
+[5, 9, 2, 8, 1, 6, 4, 7, 3, 11],
+[3, 6, 8, 4, 7, 2, 9, 1, 5, 12],
+[9, 1, 5, 3, 6, 8, 7, 2, 4, 13],
+[7, 3, 6, 9, 2, 1, 8, 5, 10, 14],
+[4, 8, 1, 6, 5, 9, 2, 3, 7, 15],
+[6, 2, 9, 1, 8, 4, 5, 10, 11, 16],
+[8, 5, 3, 7, 4, 10, 1, 6, 9, 17],
+[2, 7, 4, 5, 3, 11, 6, 9, 8, 18],
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 ])
 
 print("\nMatriz: ")
 for matrizLinha in matriz:
     print(matrizLinha)
 
+inicio = time.time()
 detMatriz = calculoDet(matriz)
+fim = time.time()
+
+total = fim - inicio
+
 print(f"Determinante = {detMatriz}")
+print(f"Tempo:{total:.9f}s")

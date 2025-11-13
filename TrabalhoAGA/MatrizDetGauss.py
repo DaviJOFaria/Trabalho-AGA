@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 def determinante_gaussiana(A):
     A = A.astype(float)
@@ -30,19 +31,27 @@ def determinante_gaussiana(A):
 
 #Exemplo
 matriz_grande = np.array([
-    [1, 5, 2, 8, 4],
-    [3, 0, 7, 1, 9],
-    [6, 4, 1, 2, 5],
-    [9, 2, 3, 7, 0],
-    [0, 1, 8, 6, 3]
+[1, 4, 7, 2, 9, 5, 3, 8, 6, 10],
+[5, 9, 2, 8, 1, 6, 4, 7, 3, 11],
+[3, 6, 8, 4, 7, 2, 9, 1, 5, 12],
+[9, 1, 5, 3, 6, 8, 7, 2, 4, 13],
+[7, 3, 6, 9, 2, 1, 8, 5, 10, 14],
+[4, 8, 1, 6, 5, 9, 2, 3, 7, 15],
+[6, 2, 9, 1, 8, 4, 5, 10, 11, 16],
+[8, 5, 3, 7, 4, 10, 1, 6, 9, 17],
+[2, 7, 4, 5, 3, 11, 6, 9, 8, 18],
+[10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 ])
 
+inicio = time.time()
 det_calculado = determinante_gaussiana(matriz_grande)
+fim = time.time()
 
-print(f"--- Cálculo do Determinante por Eliminação Gaussiana ---")
-print(f"Matriz de Entrada (5x5):\n{matriz_grande}")
+print(f"=== Cálculo do Determinante por Eliminação Gaussiana ===")
+print(f"\nMatriz:\n{matriz_grande}")
 print(f"\nDeterminante Calculado: {det_calculado:.2f}")
+print(f"Tempo:{(fim-inicio):.9f}s")
 
 #Numpy
-det_numpy = np.linalg.det(matriz_grande)
-print(f"Verificação (NumPy): {det_numpy:.2f}")
+#det_numpy = np.linalg.det(matriz_grande)
+#print(f"Verificação (NumPy): {det_numpy:.2f}")
